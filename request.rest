@@ -1,4 +1,4 @@
-POST http://localhost:3000/post
+POST http://127.0.0.1:3000/post
 Content-Type: application/json
 
 {
@@ -6,5 +6,3 @@ Content-Type: application/json
     "content": "Post Content",
     "sender": "12345"
 }
-
-GET http://localhost:3000/post
