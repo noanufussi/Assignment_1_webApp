@@ -1,6 +1,5 @@
 ### Get all posts
 GET http://localhost:3000/post
-
 ### Add post
 POST http://localhost:3000/post
 Content-Type: application/json
@@ -12,3 +11,11 @@ Content-Type: application/json
 }
 ### Get a specific post by ID
 GET http://localhost:3000/post/6960f8b485c864cf2ddd80c2
+### Update a specific post
+PUT http://localhost:3000/post/6960f8b485c864cf2ddd80c2
+Content-Type: application/json
+
+{
+    "title": "New Updated Title",
+    "content": "This content has been changed!"
+}
