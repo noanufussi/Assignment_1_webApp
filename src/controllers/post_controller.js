@@ -2,13 +2,20 @@ const Post = require('../models/post_model');
 
 const getAllPosts = async (req, res) => {
     try {
-        const posts = await Post.find();
+        const sender = req.query.sender; 
+        let posts;
+
+        if (sender) {
+            posts = await Post.find({ sender: sender });
+        } else {
+            posts = await Post.find();
+        }
+
         res.status(200).send(posts);
     } catch (error) {
         res.status(400).send(error.message);
     }
 };
-
 const getPostById = async (req, res) => {
     try {
         const post = await Post.findById(req.params.id);
