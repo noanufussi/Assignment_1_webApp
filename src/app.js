@@ -12,4 +12,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const postRoutes = require('./routes/post_routes');
 app.use('/post', postRoutes);
 
+const commentRoutes = require('./routes/comment_routes');
+app.use('/comment', commentRoutes);
+
 module.exports = app;
