@@ -1,15 +1,14 @@
 ### Get all posts
 GET http://localhost:3000/post
 
-### Get posts by sender
-GET http://localhost:3000/post?sender=6960f8b485c864cf2ddd80c2
-
-### Create a new post
+### Add post
 POST http://localhost:3000/post
 Content-Type: application/json
 
 {
-    "title": "Post Title",
-    "content": "Post Content",
-    "sender": "6960f8b485c864cf2ddd80c2"
+    "title": "First Post",
+    "content": "Hello World",
+    "sender": "123"
 }
+### Get a specific post by ID
+GET http://localhost:3000/post/6960f8b485c864cf2ddd80c2
