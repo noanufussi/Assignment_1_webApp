@@ -1,0 +1,10 @@
+POST http://localhost:3000/post
+Content-Type: application/json
+
+{
+    "title": "Post Title",
+    "content": "Post Content",
+    "sender": "12345"
+}
+
+GET http://localhost:3000/post
