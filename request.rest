@@ -1,3 +1,36 @@
+### COMMENTS API REQUESTS 
+### Add a New Comment
+POST http://localhost:3000/comment
+Content-Type: application/json
+
+{
+    "content": "This is a new comment.",
+    "sender": "commenter1",
+    "postId": "65a2a0a0a0a0a0a0a0a0a0a0" 
+}
+
+### Get All Comments
+GET http://localhost:3000/comment
+
+### Get a Comment by ID
+GET http://localhost:3000/comment/6960fa580430198c263666fa
+
+### Get Comments by Post ID
+GET http://localhost:3000/comment/post/65a2a0a0a0a0a0a0a0a0a0a0
+
+### Update a Comment
+PUT http://localhost:3000/comment/6960fa580430198c263666fa
+Content-Type: application/json
+
+{
+    "content": "This is the updated comment content."
+}
+
+### Delete a Comment
+DELETE http://localhost:3000/comment/6960fb3f0430198c263666fc
+
+
+### POSTS API REQUESTS 
 ### Get all posts
 GET http://localhost:3000/post
 ### Add post
@@ -10,12 +43,18 @@ Content-Type: application/json
     "sender": "123"
 }
 ### Get a specific post by ID
-GET http://localhost:3000/post/6960f8b485c864cf2ddd80c2
+GET http://localhost:3000/post/6961029bdaa44d170bc8bac9
+
+### Get a specific post by sender ID
+GET http://localhost:3000/post?sender=123
+
 ### Update a specific post
-PUT http://localhost:3000/post/6960f8b485c864cf2ddd80c2
+PUT http://localhost:3000/post/6961029bdaa44d170bc8bac9
 Content-Type: application/json
 
 {
     "title": "New Updated Title",
     "content": "This content has been changed!"
 }
+
+#
