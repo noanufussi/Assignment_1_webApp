@@ -40,9 +40,25 @@ const addPost = async (req, res) => {
         res.status(400).send(error.message);
     }
 };
+const updatePost = async (req, res) => {
+    try {
+        const postId = req.params.id;
+        const updates = req.body;
+        const updatedPost = await Post.findByIdAndUpdate(postId, updates, { new: true });
+
+        if (updatedPost) {
+            res.status(200).send(updatedPost);
+        } else {
+            res.status(404).send("Post not found");
+        }
+    } catch (error) {
+        res.status(400).send(error.message);
+    }
+};
 
 module.exports = {
     getAllPosts,
     getPostById,
+    updatePost,
     addPost
 };
