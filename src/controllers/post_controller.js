@@ -9,7 +9,19 @@ const getAllPosts = async (req, res) => {
     }
 };
 
+const getPostById = async (req, res) => {
+    try {
+        const post = await Post.findById(req.params.id);
 
+        if (post) {
+            res.status(200).send(post);
+        } else {
+            res.status(404).send("Post not found");
+        }
+    } catch (error) {
+        res.status(400).send(error.message);
+    }
+};
 const addPost = async (req, res) => {
     console.log("Request body received:", req.body); 
     try {
@@ -24,5 +36,6 @@ const addPost = async (req, res) => {
 
 module.exports = {
     getAllPosts,
+    getPostById,
     addPost
 };
