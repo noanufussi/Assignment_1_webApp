@@ -6,5 +6,6 @@ router.post('/', commentController.addComment);
 router.get('/', commentController.getAllComments);
 router.get('/:id', commentController.getCommentById);
 router.get('/post/:postId', commentController.getCommentsByPostId);
+router.put('/:id', commentController.updateComment);
 
 module.exports = router;
